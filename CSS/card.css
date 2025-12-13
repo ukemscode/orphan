@@ -1,0 +1,15 @@
+.tidx {
+  background-color: rgb(0, 0, 0);
+  padding: 80px 20px;
+}
+
+.tidx h2,
+.tidx h3 {
+  color: white;
+  text-align: center;
+}
+
+.tidx h3 {
+  margin-top: 18px;
+  font-weight: 100;
+}

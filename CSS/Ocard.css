@@ -1,0 +1,70 @@
+.card {
+        position: relative;
+        font-family: sans-serif;
+        border-radius: 12px;
+        width: 350px;
+        display: inline-flex;
+        flex-direction: column;
+        box-shadow: 0 0 10px 1px rgba(206, 206, 206, 0.315);
+        margin: 24px 5px 0;
+        overflow: hidden;
+      }
+      .card > :first-child {
+        max-width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card > :nth-child(2) {
+        font-weight: 500;
+        font-size: 16px;
+        margin: 8px 16px;
+      }
+
+      .card > :nth-child(3),
+      .card > :nth-child(4) {
+        display: flex;
+        align-items: center;
+      }
+
+      .card > :nth-child(3),
+      .card > :nth-child(4) {
+        margin: 10px 16px;
+      }
+
+      .card > :nth-child(3) h6,
+      .card > :nth-child(4) h6,
+      .card > h6:first-of-type {
+        margin-left: 14px;
+        margin-right: 14px;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .card > h6:first-of-type {
+        text-align: justify;
+        font-size: 14px;
+        font-weight: 100;
+      }
+
+      .card > a:first-of-type{
+        margin: 7px 16px 10px;
+        padding: 12px 10px;
+        text-decoration:none;
+        background-color:var(--button);
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 14px;
+
+      }
+      .card > :last-child{
+        position:absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgb(216, 243, 202);
+        color: rgba(28, 105, 7, 0.765);
+        z-index: 2;
+        padding: 8px 6px;
+        border-radius: 10px;
+      }

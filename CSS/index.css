@@ -1,0 +1,249 @@
+.hero {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+      rgba(29, 29, 47, 0.5),
+      rgba(29, 29, 47, 0.5)
+    ),
+    url("../assets/happy-friends-hugging-medium-shot.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.cta {
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+}
+
+.cta a,
+.x {
+  display: inline-block;
+  padding: 12px 14px;
+  background: var(--btn);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.cta > :first-child {
+  margin-right: 10px;
+}
+
+.hero > h2,
+.hero > h3 {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  color: white;
+}
+
+.hero > h2 {
+  margin-bottom: 20px;
+}
+
+.hero > h3 {
+  margin-bottom: 25px;
+  font-weight: 200;
+}
+
+.service {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 80px 0 40px;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.service > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 50px 40px;
+}
+
+.service > div > div {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.service > div > h5 {
+  color: rgb(5, 30, 134);
+  font-size: 40px;
+  font-weight: 200;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.service > div > h6 {
+  color: lightslategray;
+  font-size: 20px;
+  font-weight: 100;
+  width: 175px;
+  text-align: center;
+}
+
+.service > :first-child > :first-child {
+  background-color: rgba(0, 55, 255, 0.174);
+}
+
+.service > :nth-child(2) > :first-child {
+  background-color: rgba(34, 124, 6, 0.174);
+}
+
+.service > :nth-child(3) > :first-child {
+  background-color: rgba(225, 148, 4, 0.174);
+}
+
+.service > :last-child > :first-child {
+  background-color: rgba(197, 10, 10, 0.164);
+}
+
+.service > div > :first-child > .bi {
+  /* width: 50px; */
+  font-size: 35px;
+}
+
+.bi-people {
+  color: blue;
+}
+
+.bi-emoji-smile {
+  color: green;
+}
+
+.bi-award {
+  color: rgb(132, 132, 11);
+}
+
+.bi-heart {
+  color: red;
+}
+
+.abt {
+  background-color: rgb(247, 247, 248);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 30px;
+}
+
+.abt > :last-child {
+  width: 500px;
+  border-radius: 10px;
+}
+
+.abt > :first-child {
+  margin-right: 18px;
+  width: 500px;
+}
+
+.abt h2,
+.abt h3 {
+  font-weight: 100;
+  font-style: normal;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 10px;
+  background-color: #88898a;
+}
+
+.action h2,
+.action h3 {
+  color: white;
+}
+
+.action h2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.action h3 {
+  font-weight: 200;
+  font-size: 18px;
+  margin-bottom: 18px;
+  max-width: 800px;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .hero h2 {
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .hero h3 {
+    font-size: 16px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 803px) {
+  .hero {
+    background-size: auto 700px;
+    background-position: center;
+  }
+}
+
+@media (max-width: 957px) {
+  .abt {
+    flex-wrap: wrap;
+  }
+
+  .abt > :first-child {
+    width: 600px;
+    margin-bottom: 50px;
+    margin-left: 0;
+  }
+
+  .abt > :last-child {
+    width: 600px;
+    resize: both;
+  }
+}
+
+@media (max-width: 650px) {
+  .abt > :last-child {
+    width: 500px;
+  }
+}
+
+@media (max-width: 546px) {
+  .abt > :last-child {
+    width: 420px;
+    /* justify-self: left; */
+  }
+}
+
+@media (max-width: 400px) {
+  .abt > :last-child {
+    width: 300px;
+    /* justify-self: left; */
+  }
+
+}

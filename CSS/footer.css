@@ -1,0 +1,135 @@
+footer {
+  padding: 80px 10px 20px;
+  color: white;
+  background-color: var(--black);
+}
+
+footer > :first-child {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+footer > :first-child > div {
+  margin: 0 20px;
+}
+
+
+
+footer > :last-child {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: rgb(151, 164, 177);
+  font-weight: 200;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.head {
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: left;
+}
+
+.head + h6,
+.contactf ul li {
+  color: rgb(151, 164, 177);
+  /* max-width: 420px; */
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 22px;
+}
+
+.fxc > :last-child {
+  color: rgb(151, 164, 177);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 25px;
+}
+
+.fxc > :nth-child(2) {
+  display: flex;
+  margin: 20px 0;
+}
+
+.fxc > :nth-child(2) > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  height: 36px;
+  width: 36px;
+  border-radius: 100%;
+  background-color: rgb(22, 50, 78);
+  padding: 10px;
+}
+
+.fxc > :nth-child(2) > div > .bi{
+  /* width: 20px; */
+  font-size: 20px;
+}
+
+.contactf ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contactf ul {
+  padding: 0px;
+}
+
+.contactf ul li .bi {
+  /* width: 24px; */
+  font-size: 22px;
+  margin-right: 10px;
+  color: white;
+}
+
+.contactf > ul > :last-child h6 a,
+.contactf ul li h6 {
+  text-decoration: none;
+  color: rgb(151, 164, 177);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 25px;
+}
+
+@media(max-width:787px){
+  footer > :first-child{
+    flex-direction: column;
+    gap: 1;
+    /* align-items: center; */
+  }
+
+  }
+
+  footer > :first-child > div{
+    
+    margin: 24px 20px;
+    
+    
+    
+  }
+  
+  footer >:first-child > :nth-child(2){
+   
+    min-width: 420px;
+    flex-grow: 200;
+    
+  }
+
+
+
+@media(max-width:400px){
+  .contactf{
+    
+  }
+}
+
+@media(max-width:451px){
+  footer >:first-child > :nth-child(2) {
+    min-width:fit-content;
+  }
+}

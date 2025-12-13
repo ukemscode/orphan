@@ -1,0 +1,78 @@
+@import url("../CSS/menu.css");
+
+header{
+  background-color: antiquewhite;
+}
+.ht,
+.ht > :last-child,
+.ht > :first-child,
+.head {
+  display: flex;
+}
+
+.ht .bi-list {
+  display: none;
+}
+
+.ht {
+  padding: 20px 20px;
+
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: antiquewhite; */
+}
+
+.ht > :first-child {
+  align-items: center;
+
+  /* background-color: antiquewhite; */
+}
+
+.ht > :first-child nav {
+  width: 125px;
+}
+
+.ht > :first-child img,
+.logo {
+  height: 24px;
+  margin-right: 10px;
+}
+
+.ht > :nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+.ht > :nth-child(2) > li {
+  margin-left: 25px;
+  list-style: none;
+}
+
+.ht > :nth-child(2) > :last-child,
+.btn {
+  background-color: var(--btn);
+  padding: 12px 10px;
+  border-radius: 10px;
+}
+
+.ht > :nth-child(2) > :last-child a {
+  color: rgb(0, 0, 0);
+}
+
+.ht > :nth-child(2) > li > a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 850px) {
+  .ht > :nth-child(2) {
+    display: none;
+  }
+
+  .ht .bi-list {
+    display: inline-flex;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 754px) {
+}

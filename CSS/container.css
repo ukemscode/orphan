@@ -1,0 +1,117 @@
+.provide {
+  padding: 50px 10px;
+}
+.provide > h6 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 26px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.container > div {
+  /* background-color: antiquewhite; */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px 1px rgb(233, 232, 232);
+  padding: 30px 20px;
+  margin: 30px 0 0;
+}
+
+.container > div > h6 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+.container > div > h5 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+.container > div > div {
+  
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.container > :first-child > div{
+background-color: rgba(0, 255, 0, 0.144);
+}
+
+.container > :nth-child(2) > div{
+background-color: rgba(0, 38, 255, 0.183);
+}
+
+.container > :nth-child(3) > div{
+background-color: rgba(255, 0, 0, 0.183);
+}
+
+.container > :nth-child(4) > div{
+background-color:  rgba(135, 32, 252, 0.196);
+}
+
+.container > :nth-child(5) > div{
+background-color:  rgba(252, 149, 32, 0.196);
+}
+
+.container > :nth-child(6) > div{
+background-color:  rgba(252, 32, 157, 0.196);
+}
+
+.bi-house {
+  width: 30px;
+  height: 30px;
+  color: rgb(9, 111, 16);
+}
+
+.bi-book {
+  width: 30px;
+  height: 30px;
+  color: rgb(44, 44, 254);
+}
+
+.bi-suit-heart-fill{
+    width: 30px;
+  height: 30px;
+  color: rgb(252, 32, 32);
+}
+
+.bi-people{
+    width: 30px;
+  height: 30px;
+  color: rgb(135, 32, 252);
+
+}
+
+.bi-heart{
+     width: 30px;
+  height: 30px;
+  color: rgb(102, 87, 28);
+
+}
+
+.bi-peoplex{
+width: 30px;
+  height: 30px;
+  color: rgb(252, 32, 91);
+}
