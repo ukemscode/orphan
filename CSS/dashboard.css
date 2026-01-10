@@ -3,7 +3,7 @@
   margin: 26px auto 12px;
 }
 
-.bi{
+.bi {
   font-size: 20px;
 }
 .bi-trash3 {
@@ -12,7 +12,7 @@
 }
 
 .bi-pencil {
-  color:blue;
+  color: blue;
   /* font-size: 22px; */
 }
 
@@ -242,6 +242,49 @@ th {
 .actions button:hover {
   transform: scale(1.1);
 }
+
+.add-child {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.742);
+}
+
+.add-child form {
+  width: 400px;
+  background-color: white;
+  padding: 18px;
+  border-radius: 6px;
+}
+
+.add-child form > div {
+  margin-top: 10px;
+}
+.add-child label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.add-child input, .add-child select, .add-child button{
+  width: 100%;
+}
+
+.add-child button{
+  margin-top: 16px;
+  padding: 6px 0px;
+  font-size: 1rem;
+
+}
+
+.add-child select, .add-child input{
+  height: 30px;
+}
+
 
 /* Responsive rules */
 @media (max-width: 992px) {

@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --btn: #007bff;
+}
+
+header,
+header > :last-child,
+header > :first-child,
+.head {
+  display: flex;
+}
+
+header {
+  padding: 20px 20px;
+
+  justify-content: space-between;
+}
+
+header > :first-child {
+  align-items: center;
+}
+
+header > :first-child img,
+.logo {
+  height: 24px;
+  margin-right: 10px;
+}
+
+header > :last-child {
+  display: flex;
+  align-items: center;
+}
+header > :last-child > li {
+  margin-left: 25px;
+  list-style: none;
+}
+
+header > :last-child > :last-child,
+.btn {
+  background-color: var(--btn);
+  padding: 12px 10px;
+  border-radius: 10px;
+}
+
+header > :last-child > :last-child a {
+  color: white;
+}
+
+header > :last-child > li > a {
+  text-decoration: none;
+  color: black;
+}
+
+.hero {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+      rgba(29, 29, 47, 0.5),
+      rgba(29, 29, 47, 0.5)
+    ),
+    url("../assets/orphans.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.cta {
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+}
+
+.cta a,
+.x {
+  display: inline-block;
+  padding: 12px 14px;
+  background: var(--btn);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.cta > :first-child {
+  margin-right: 10px;
+}
+
+.hero > h2,
+.hero > h3 {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  color: white;
+}
+
+.hero > h2 {
+  margin-bottom: 20px;
+}
+
+.hero > h3 {
+  margin-bottom: 25px;
+  font-weight: 200;
+}
+
+.service {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 80px 0;
+}
+
+.service > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service > div > div {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.service > div > div > img {
+  width: 50px;
+}
+
+.service > div > h5 {
+  color: rgb(5, 30, 134);
+  font-size: 40px;
+  font-weight: 200;
+  margin-top: 5px;
+}
+
+.service > div > h6 {
+  color: lightslategray;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.service > :first-child > :first-child {
+  background-color: rgba(0, 55, 255, 0.174);
+}
+
+.service > :nth-child(2) > :first-child {
+  background-color: rgba(34, 124, 6, 0.174);
+}
+
+.service > :nth-child(3) > :first-child {
+  background-color: rgba(225, 148, 4, 0.174);
+}
+
+.service > :last-child > :first-child {
+  background-color: rgba(197, 10, 10, 0.164);
+}
+
+.service > :first-child > :first-child > img {
+  width: 50px;
+}
+
+.abt {
+  background-color: rgb(247, 247, 248);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 100px 30px;
+}
+
+.abt > :last-child {
+  width: 700px;
+  border-radius: 10px;
+}
+
+.abt > :first-child {
+  margin-right: 10px;
+}
+
+.abt h2,
+.abt h3 {
+  font-weight: 100;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 10px;
+  background-color: #063d78;
+}
+
+.action h2,
+.action h3 {
+  color: white;
+}
+
+.action h2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.action h3 {
+  font-weight: 200;
+  font-size: 18px;
+  margin-bottom: 18px;
+  max-width: 800px;
+  text-align: center;
+}
+
+footer {
+  padding: 80px 10px 20px;
+  color: white;
+  background-color: rgb(2, 14, 44);
+}
+
+footer > :first-child {
+  display: flex;
+  justify-content: space-around;
+  align-items: first baseline;
+}
+
+footer > :first-child > :first-child {
+}
+
+footer > :last-child {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: rgb(151, 164, 177);
+  font-weight: 200;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.head {
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: left;
+}
+
+.head + h6,
+.contactf ul li {
+  color: rgb(151, 164, 177);
+  max-width: 420px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 22px;
+}
+
+.fxc > :last-child {
+  color: rgb(151, 164, 177);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 25px;
+}
+
+.fxc > :nth-child(2) {
+  display: flex;
+  margin: 20px 0;
+}
+
+.fxc > :nth-child(2) > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  height: 36px;
+  width: 36px;
+  border-radius: 100%;
+  background-color: rgb(22, 50, 78);
+  padding: 10px;
+}
+
+.fxc > :nth-child(2) > div > img {
+  width: 20px;
+}
+
+.contactf ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contactf ul {
+  padding: 0px;
+}
+
+.contactf ul li img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.contactf > ul > :last-child h6 a,
+.contactf ul li h6 {
+  text-decoration: none;
+  color: rgb(151, 164, 177);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 25px;
+}
