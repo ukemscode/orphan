@@ -84,7 +84,7 @@
   <section class="manage-children">
     <div class="header">
       <h2>Manage Children</h2>
-      <button class="add-btn">
+      <button class="add-btn" onclick="add()">
         <i class="bi bi-plus-lg"></i>
         Add New Child
       </button>
@@ -153,6 +153,52 @@
         </tbody>
       </table>
     </div>
+
+    <div class="add-child">
+      <!-- 
+        name
+        gender
+        profile_picture
+        Sponsored_statue
+        funding 
+        age
+      -->
+        <form action="" method="get">
+          <div>
+            <label for="">Name</label>
+             <input type="text" name="" id="">
+          </div>
+           <div>
+            <label for="">Gender</label>
+             <select name="" id="">
+               <option value="">Male</option>
+               <option value="">Female</option>
+             </select>
+          </div>
+           <div>
+            <label for="">Profile Photo</label>
+             <input type="file" name="" id="">
+          </div>
+           <div>
+            <label for="">Sponsored Status</label>
+             <select name="" id="">
+              <option value="">Full Sponsored</option>
+              <option value="">Partially sponsored</option>
+              <option value="">Not Sponsored</option>
+             </select>
+          </div>
+           <div>
+            <label for="">Funding</label>
+             <input type="number" name="" id="">
+          </div>
+           <div>
+            <label for="">Age</label>
+             <input type="number" name="" id="" min="1" max="25">
+          </div>
+          <button type="submit">Add child</button>
+        </form>
+
+    </div>
   </section>
 
 
@@ -161,7 +207,15 @@
   <?php
   include '../include/footer.php';
   ?>
+<script >
+  let addchild=document.getElementsByClassName("add-child")[0];
 
+  
+  function add(){
+     addchild.style.display="flex";
+  }
+
+</script>
 </body>
 
 </html>
