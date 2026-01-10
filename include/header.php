@@ -1,7 +1,7 @@
 <header>
       <section class="ht">
         <div>
-          <img src="/orphan/assets/love.svg" alt="products logo" />
+          <img src="/orphan/assets/love-svgrepo-com.svg" alt="products logo" />
           <nav>Babys Home</nav>
         </div>
         <ul>

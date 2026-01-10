@@ -2,7 +2,7 @@
       <div>
         <div>
           <div class="head">
-            <img src="/orphan/assets/love.svg" alt="products logo" class="logo" />
+            <img src="/orphan/assets/love-svgrepo-com.svg" alt="products logo" class="logo" />
             <nav>Babys Home</nav>
           </div>
           <h6>
