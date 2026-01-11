@@ -10,11 +10,12 @@ function card($title,$content){
      </section>';
 }
 
-function Ocard($name="",$age=0,$gender="",$grade="",$about=""){
+function Ocard($name="",$age=0,$gender="",$photo="",$about="",$status=""){
+ 
   echo '
     <section class="card">
-      <img src="/orphan/assets/orphans/portrait-little-african-boy.jpg" alt="" />
-      <h4>John Kelly</h4>
+      <img src="/orphan/uploads/'.$photo.'" alt="" />
+      <h4>',$name.'</h4>
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +29,7 @@ function Ocard($name="",$age=0,$gender="",$grade="",$about=""){
             d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"
           />
         </svg>
-        <h6>7 years old • Female</h6>
+        <h6>'.$age.' years old • '.$gender.'</h6>
       </div>
       <div>
         <svg
@@ -52,9 +53,9 @@ function Ocard($name="",$age=0,$gender="",$grade="",$about=""){
         Sarah is a bright and cheerful girl who loves reading and drawing. She
         dreams of becoming an artist one day.
       </h6>
-      <a href="">Sponsor FIRST_NAME</a>
+      <a href="">Sponsor </a>
 
-      <h6>Full Sponsored</h6>
+      <h6 >'.$status.'</h6>
     </section>';
 }
 
