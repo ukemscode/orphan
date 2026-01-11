@@ -23,7 +23,7 @@
                 <p>Access the administrative dashboard</p>
             </div>
 
-            <form>
+            <form method="post" action="../src/Admin.php">
                 <div class="form-group">
                     <label>Email Address</label>
                     <div class="input-wrapper">
@@ -32,7 +32,7 @@
                             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                         </svg>
-                        <input type="email" placeholder="admin@orphanage.com" required>
+                        <input type="email" name="email" placeholder="admin@orphanage.com" required>
                     </div>
                 </div>
 
@@ -44,18 +44,14 @@
                             <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                         </svg>
-                        <input type="password" placeholder="Enter your password" required>
+                        <input type="password" name="password" placeholder="Enter your password" required>
                     </div>
                 </div>
 
                 <button type="submit" class="btn-submit">Sign In</button>
             </form>
 
-            <div class="demo-info">
-                <p class="demo-title">Demo Credentials:</p>
-                <p>Email: admin@orphanage.com</p>
-                <p>Password: admin123</p>
-            </div>
+           
             <div class="back-home">
 
                 <a href="../index.php" >Back to Home</a>

@@ -17,6 +17,22 @@
 
   include '../include/header.php';
   include '../src/card.php';
+  include '../config/database_config.php';
+
+  $sql = "SELECT * FROM child";
+  
+  $sql2="SELECT * FROM child where status='Fully Sponsored'";
+
+  $sql3='SELECT sum(funding) as total_funding FROM child';
+
+  $child = $conn->query($sql);
+
+  $fully_sponsored=$conn->query($sql2);
+
+  $total_funding=$conn->query($sql3);
+
+  $need_support=$child->num_rows-$fully_sponsored->num_rows;
+
 
   card("Admin Dashboard", "Manage orphans and view statistics");
   ?>
@@ -28,7 +44,7 @@
           <i class="bi bi-person-check"></i>
         </div>
         <div class="info">
-          <h2>6</h2>
+          <?php echo '<h2>' . $child->num_rows . '</h2>'; ?>
           <p>Total Children</p>
         </div>
       </div>
@@ -39,7 +55,7 @@
           <i class="bi bi-heart-fill"></i>
         </div>
         <div class="info">
-          <h2>1</h2>
+          <?php echo '<h2>' . $fully_sponsored->num_rows . '</h2>'; ?>
           <p>Fully Sponsored</p>
         </div>
       </div>
@@ -50,7 +66,7 @@
           <i class="bi bi-exclamation-circle"></i>
         </div>
         <div class="info">
-          <h2>3</h2>
+         <?php echo '<h2>' . $need_support . '</h2>'; ?>
           <p>Needing Support</p>
         </div>
       </div>
@@ -61,7 +77,10 @@
           <i class="bi bi-cash-stack"></i>
         </div>
         <div class="info">
-          <h2>$2134</h2>
+          <?php 
+            $total=$total_funding->fetch_assoc() ;
+            echo '<h2>' .$total['total_funding']. '</h2>'; 
+          ?>
           <p>Total Donations</p>
         </div>
       </div>
@@ -81,7 +100,7 @@
   </div>
 
 
-  <section class="manage-children">
+  <section id="manage-children" class="manage-children">
     <div class="header">
       <h2>Manage Children</h2>
       <button class="add-btn" onclick="add()">
@@ -103,53 +122,39 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <?php
+          while ($x = $child->fetch_assoc()) {
+            if ($x['status'] == "Fully Sponsored")
+              $status = "status full";
+            else
+              $status = "status partial";
+            echo '  <tr>
             <td>
               <div class="child-info">
-                <img src="https://i.pravatar.cc/50?img=12" alt="Sarah">
+                <img src="../uploads/' . $x['filename'] . '" alt="' . $x['filename'] . '">
                 <div>
-                  <strong>Sarah Johnson</strong><br>
-                  <small>Female</small>
+                  <strong>' . $x['name'] . '</strong><br>
+                  <small>' . $x['gender'] . '</small>
                 </div>
               </div>
             </td>
-            <td>7</td>
-            <td class="hide-md">Grade 2</td>
-            <td><span class="status full">Fully Sponsored</span></td>
-            <td class="hide-sm">$484 / $150</td>
-            <td class="actions">
-              <button class="edit" title="Edit">
-                <i class="bi bi-pencil"></i>
-              </button>
-              <button class="delete" title="Delete">
-                <i class="bi bi-trash3"></i>
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <div class="child-info">
-                <img src="https://i.pravatar.cc/50?img=5" alt="Michael">
-                <div>
-                  <strong>Michael Brown</strong><br>
-                  <small>Male</small>
-                </div>
-              </div>
-            </td>
-            <td>10</td>
+            <td>' . $x['age'] . '</td>
             <td class="hide-md">Grade 5</td>
-            <td><span class="status partial">Partially Sponsored</span></td>
-            <td class="hide-sm">$120 / $200</td>
+            <td><span class="' . $status . '">' . $x['status'] . '</span></td>
+            <td class="hide-sm">' . $x['funding'] . '</td>
             <td class="actions">
-              <button class="edit" title="Edit">
+              <a class="edit" href="/orphan/pages/modifychild.php?name='. $x['name'].'">
                 <i class="bi bi-pencil"></i>
-              </button>
-              <button class="delete" title="Delete">
+              </a>
+              <a class="delete" href="/orphan/src/delete_orphan.php?name='. $x['name'].'">
                 <i class="bi bi-trash3"></i>
-              </button>
+              </a>
             </td>
           </tr>
+';
+          }
+
+          ?>
         </tbody>
       </table>
     </div>
@@ -163,41 +168,50 @@
         funding 
         age
       -->
-        <form action="" method="get">
-          <div>
-            <label for="">Name</label>
-             <input type="text" name="" id="">
-          </div>
-           <div>
-            <label for="">Gender</label>
-             <select name="" id="">
-               <option value="">Male</option>
-               <option value="">Female</option>
-             </select>
-          </div>
-           <div>
-            <label for="">Profile Photo</label>
-             <input type="file" name="" id="">
-          </div>
-           <div>
-            <label for="">Sponsored Status</label>
-             <select name="" id="">
-              <option value="">Full Sponsored</option>
-              <option value="">Partially sponsored</option>
-              <option value="">Not Sponsored</option>
-             </select>
-          </div>
-           <div>
-            <label for="">Funding</label>
-             <input type="number" name="" id="">
-          </div>
-           <div>
-            <label for="">Age</label>
-             <input type="number" name="" id="" min="1" max="25">
-          </div>
-          <button type="submit">Add child</button>
-        </form>
+      <form class="child-form" action="../src/add_child.php" method="post" enctype="multipart/form-data">
+        <h2>Add Child</h2>
 
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Gender</label>
+          <select name="gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Profile Photo</label>
+          <input type="file" name="photo" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+          <label>Sponsored Status</label>
+          <select name="status" required>
+            <option value="">Select</option>
+            <option value="Fully Sponsored">Fully Sponsored</option>
+            <option value="Partially Sponsored">Partially Sponsored</option>
+            <option value="Not Sponsored">Not Sponsored</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Funding</label>
+          <input type="number" name="funding" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" name="age" min="1" max="25" required>
+        </div>
+
+        <button type="submit">Add Child</button>
+      </form>
     </div>
   </section>
 
@@ -207,15 +221,15 @@
   <?php
   include '../include/footer.php';
   ?>
-<script >
-  let addchild=document.getElementsByClassName("add-child")[0];
+  <script>
+    let addchild = document.getElementsByClassName("add-child")[0];
 
-  
-  function add(){
-     addchild.style.display="flex";
-  }
 
-</script>
+    function add() {
+      addchild.style.display = "flex";
+    }
+
+  </script>
 </body>
 
 </html>

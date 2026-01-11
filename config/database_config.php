@@ -1,15 +1,13 @@
 <?php
 
+$root_fodder=$_SERVER['DOCUMENT_ROOT'] . '\orphan';
+
 $username = "root";
-$host = "locahost";
+$host = "localhost";
 $password = "";
 $dbname = "orphan";
 
 // CREATE DATABASE orphan
-$conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli($host, $username, $password, $dbname);
 
-
-// name gender age education status profile-photo 
-
-//
 ?>
