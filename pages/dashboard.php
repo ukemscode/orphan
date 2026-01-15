@@ -101,11 +101,6 @@
       <div class="amount">$990</div>
     </div>
   </div>
-
-  <div>
-    <a href="">Add admin</a>
-    <a href="">Delete Admin</a>
-  </div>
   <section id="manage-children" class="manage-children">
     <div class="header">
       <h2>Manage Children</h2>

@@ -19,9 +19,9 @@
   include '../include/header.php';
   include '../src/card.php';
 
-  $name=$_GET['name'] ?? null;
+  $name = $_GET['name'] ?? null;
 
-  
+
 
   card("Make a Donation", "Your generosity can change a child's life. Every contribution makes a real difference.");
   ?>
@@ -29,7 +29,7 @@
 
 
     <main>
-   
+
 
       <!-- Donation Form Section -->
       <section class="donation-section container">
@@ -37,34 +37,38 @@
           <!-- Left: Donation Form -->
           <article class="donation-form">
             <?php
-             if($name != null) echo '<h2>Sponsor '.$name.'</h2>';
-             else echo '  <h2>Donation Details</h2>';
+            if ($name != null)
+              echo '<h2>Sponsor ' . $name . '</h2>';
+            else
+              echo '  <h2>Donation Details</h2>';
 
-             ?>
-          
-            <form>
+            ?>
+
+            <form action="../src/process_donations.php" method="post">
+              <?php echo '<input type="hidden" name="childname" value="'.$name.'">' ?>
               <div class="form-group">
                 <label>Donation Amount *</label>
                 <div class="preset-buttons">
-                  <button type="button">$25</button>
-                  <button type="button">$50</button>
-                  <button type="button">$100</button>
-                  <button type="button">$250</button>
+                  <button value="25" type="button" id="d1">$25</button>
+                  <button value="50" type="button" id="d2">$50</button>
+                  <button value="100" type="button" id="d3">$100</button>
+                  <button value="250" type="button" id="d4">$250</button>
                 </div>
                 <div class="input-wrapper">
                   <span>$</span>
-                  <input type="number" placeholder="Custom amount" min="1" step="0.01" required>
+                  <input type="number" id="d5" name="cdonation" placeholder="Custom amount" min="1" step="0.01"
+                    required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label>Your Name *</label>
-                <input type="text" placeholder="John Doe" required>
+                <input type="text" name="name" placeholder="John Doe" required>
               </div>
 
               <div class="form-group">
                 <label>Your Email *</label>
-                <input type="email" placeholder="john@example.com" required>
+                <input type="email" name="email" placeholder="john@example.com" required>
               </div>
 
               <div class="form-group">
@@ -129,6 +133,18 @@
   <?php
   include '../include/footer.php';
   ?>
+  <script>
+    let d1 = document.getElementById('d1');
+    let d2 = document.getElementById('d2');
+    let d3 = document.getElementById('d3');
+    let d4 = document.getElementById('d4');
+    let d5 = document.getElementById('d5');
+
+    d1.onclick = () => d5.value = d1.value;
+    d2.onclick = () => d5.value = d2.value;
+    d3.onclick = () => d5.value = d3.value;
+    d4.onclick = () => d5.value = d4.value;
+  </script>
 </body>
 
 </html>

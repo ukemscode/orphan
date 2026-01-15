@@ -22,20 +22,19 @@
     include '../src/card.php';
     include '../config/database_config.php';
 
-    $opt = $_GET['filter'];
+    $opt = $_GET['filter'] ?? 'all';
 
-    $sql='SELECT * FROM child';
+    $sql=' ';
     
-     echo $opt;
     
 
-    // if ($opt === 'all') {
+    if ($opt === 'all') {
 
-    //     $sql = "SELECT * FROM child";
-    // } elseif ($opt === 'support')
-    //     $sql = "SELECT * FROM child where status !='Fully Sponsored'";
-    // elseif ($opt === 'sponsored')
-    //     $sql = "SELECT * FROM child where status ='Fully Sponsored'";
+        $sql = "SELECT * FROM child";
+    } elseif ($opt === 'support')
+        $sql = "SELECT * FROM child where status !='Fully Sponsored'";
+    elseif ($opt === 'sponsored')
+        $sql = "SELECT * FROM child where status ='Fully Sponsored'";
 
 
 
@@ -47,24 +46,19 @@
 
 
     ?>
-    <section class="mkc">
-        <a href="/orphan/pages/children.php#ctxc?filter=all" class="bx" id="all">All Children </a>
-        <a href="/orphan/pages/children.php#ctxc?filter=support" id="support">Need Support </a>
-        <a href="/orphan/pages/children.php#ctxc?filter=sponsored" id="sponsored">Sponsored</a>
+    <section class="mkc" id="children">
+        <a href="/orphan/pages/children.php?filter=all#children" class="bx" id="all">All Children </a>
+        <a href="/orphan/pages/children.php?filter=support#children" id="support">Need Support </a>
+        <a href="/orphan/pages/children.php?filter=sponsored#children" id="sponsored">Sponsored</a>
     </section>
 
-    <section class="ctxc" id="ctxc">
+    <section class="ctxc" >
         <?php
         while ($child = $children->fetch_assoc()) {
 
             Ocard($child['name'], $child['age'], $child['gender'], $photo = $child['filename'], "", $status = $child['status']);
         }
-        // Ocard();
-        // Ocard();
-        // Ocard();
-        // Ocard();
-        // Ocard();
-        // Ocard();
+       
         ?>
 
     </section>
