@@ -41,9 +41,9 @@
 
     ?>
     <section class="mkc">
-        <a href="/orphan/pages/children.php#ctxc?filter=all" class="bx">All Children </a>
-        <a href="/orphan/pages/children.php#ctxc?filter=support">Need Support </a>
-        <a href="/orphan/pages/children.php#ctxc?filter=sponsored">Sponsored</a>
+        <a href="/orphan/pages/children.php#ctxc?filter=all" class="bx" id="all">All Children </a>
+        <a href="/orphan/pages/children.php#ctxc?filter=support" id="support">Need Support </a>
+        <a href="/orphan/pages/children.php#ctxc?filter=sponsored" id="sponsored">Sponsored</a>
     </section>
 
     <section class="ctxc" id="ctxc">
@@ -69,7 +69,32 @@
     include '../include/footer.php';
 
     ?>
+<script>
+    let all=document.getElementById('all');
+    let need=document.getElementById('support');
+    let sponsored=document.getElementById('sponsored');
+    
+    all.onclick=()=>{
+        all.style.backgroundColor="#eadb0a";
+        need.style.backgroundColor="#c0c9d6";
+        sponsored.style.backgroundColor="#c0c9d6";
 
+    }
+
+     need.onclick=()=>{
+        all.style.backgroundColor="#c0c9d6";
+        need.style.backgroundColor="#eadb0a";
+        sponsored.style.backgroundColor="#c0c9d6";
+
+    }
+
+     sponsored.onclick=()=>{
+        all.style.backgroundColor="#c0c9d6";
+        need.style.backgroundColor="#c0c9d6";
+        sponsored.style.backgroundColor="#eadb0a";
+
+    }
+</script>
 
 
 </body>

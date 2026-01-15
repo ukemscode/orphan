@@ -15,7 +15,7 @@
 <body>
   <?php
 
-include '../src/Auth.php';
+  include '../src/Auth.php';
   include '../include/header.php';
   include '../src/card.php';
   include '../config/database_config.php';
@@ -23,18 +23,18 @@ include '../src/Auth.php';
   redirect_if_not_auth();
 
   $sql = "SELECT * FROM child";
-  
-  $sql2="SELECT * FROM child where status='Fully Sponsored'";
 
-  $sql3='SELECT sum(funding) as total_funding FROM child';
+  $sql2 = "SELECT * FROM child where status='Fully Sponsored'";
+
+  $sql3 = 'SELECT sum(funding) as total_funding FROM child';
 
   $child = $conn->query($sql);
 
-  $fully_sponsored=$conn->query($sql2);
+  $fully_sponsored = $conn->query($sql2);
 
-  $total_funding=$conn->query($sql3);
+  $total_funding = $conn->query($sql3);
 
-  $need_support=$child->num_rows-$fully_sponsored->num_rows;
+  $need_support = $child->num_rows - $fully_sponsored->num_rows;
 
 
   card("Admin Dashboard", "Manage orphans and view statistics");
@@ -69,7 +69,7 @@ include '../src/Auth.php';
           <i class="bi bi-exclamation-circle"></i>
         </div>
         <div class="info">
-         <?php echo '<h2>' . $need_support . '</h2>'; ?>
+          <?php echo '<h2>' . $need_support . '</h2>'; ?>
           <p>Needing Support</p>
         </div>
       </div>
@@ -80,9 +80,9 @@ include '../src/Auth.php';
           <i class="bi bi-cash-stack"></i>
         </div>
         <div class="info">
-          <?php 
-            $total=$total_funding->fetch_assoc() ;
-            echo '<h2>' .$total['total_funding']. '</h2>'; 
+          <?php
+          $total = $total_funding->fetch_assoc();
+          echo '<h2>' . $total['total_funding'] . '</h2>';
           ?>
           <p>Total Donations</p>
         </div>
@@ -102,10 +102,10 @@ include '../src/Auth.php';
     </div>
   </div>
 
-<div>
-  <a href="">Add admin</a>
-  <a href="">Delete Admin</a>
-</div>
+  <div>
+    <a href="">Add admin</a>
+    <a href="">Delete Admin</a>
+  </div>
   <section id="manage-children" class="manage-children">
     <div class="header">
       <h2>Manage Children</h2>
@@ -149,10 +149,10 @@ include '../src/Auth.php';
             <td><span class="' . $status . '">' . $x['status'] . '</span></td>
             <td class="hide-sm">' . $x['funding'] . '</td>
             <td class="actions">
-              <a class="edit" href="/orphan/pages/modifychild.php?name='. $x['name'].'">
+              <a class="edit" href="/orphan/pages/modifychild.php?name=' . $x['name'] . '">
                 <i class="bi bi-pencil"></i>
               </a>
-              <a class="delete" href="/orphan/src/delete_orphan.php?name='. $x['name'].'">
+              <a class="delete" href="/orphan/src/delete_orphan.php?name=' . $x['name'] . '">
                 <i class="bi bi-trash3"></i>
               </a>
             </td>
@@ -176,6 +176,8 @@ include '../src/Auth.php';
       -->
       <form class="child-form" action="../src/add_child.php" method="post" enctype="multipart/form-data">
         <h2>Add Child</h2>
+        <p class="cancel" id="cancel" ><i class="bi bi-x-circle"></i></p>
+    
 
         <div class="form-group">
           <label>Name</label>
@@ -229,6 +231,15 @@ include '../src/Auth.php';
   ?>
   <script>
     let addchild = document.getElementsByClassName("add-child")[0];
+
+    let hide =document.getElementById('cancel');
+    
+
+
+    hide.onclick=()=>addchild.style.display = "none";
+
+
+    
 
 
     function add() {

@@ -19,26 +19,29 @@
   include '../include/header.php';
   include '../src/card.php';
 
+  $name=$_GET['name'] ?? null;
+
+  
+
   card("Make a Donation", "Your generosity can change a child's life. Every contribution makes a real difference.");
   ?>
   <section>
 
 
     <main>
-      <!-- Hero Section -->
-      <!-- <section class="hero">
-      <div class="container center">
-        <h1>Make a Donation</h1>
-        <p>Your generosity can change a child's life. Every contribution makes a real difference.</p>
-      </div>
-    </section> -->
+   
 
       <!-- Donation Form Section -->
       <section class="donation-section container">
         <div class="donation-grid">
           <!-- Left: Donation Form -->
           <article class="donation-form">
-            <h2>Donation Details</h2>
+            <?php
+             if($name != null) echo '<h2>Sponsor '.$name.'</h2>';
+             else echo '  <h2>Donation Details</h2>';
+
+             ?>
+          
             <form>
               <div class="form-group">
                 <label>Donation Amount *</label>

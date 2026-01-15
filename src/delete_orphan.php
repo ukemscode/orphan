@@ -1,6 +1,8 @@
 <?php
-
+  include '../src/Auth.php';
  include '../config/database_config.php';
+
+   redirect_if_not_auth();
 
   $name=$_GET['name'];
 

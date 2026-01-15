@@ -8,12 +8,20 @@
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     font-family: system-ui, sans-serif;
+    position: relative;
   }
 
   .child-form h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #1f2933;
+  }
+
+  .cancel{
+    position: absolute;
+    right:26px;
+    top: 22px;
+    font-size: 26px;
   }
 
   .form-group {
