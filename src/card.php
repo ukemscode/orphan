@@ -15,7 +15,7 @@ function Ocard($name="",$age=0,$gender="",$photo="",$about="",$status=""){
   echo '
     <section class="card">
       <img src="/orphan/uploads/'.$photo.'" alt="" />
-      <h4>',$name.'</h4>
+      <h4>'.$name.'</h4>
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ function Ocard($name="",$age=0,$gender="",$photo="",$about="",$status=""){
         <h6>Grade 2</h6>
       </div>
       <h6>
-        Sarah is a bright and cheerful girl who loves reading and drawing. She
+        '.$name.' is a bright,cheerful and also loves reading and drawing. She
         dreams of becoming an artist one day.
       </h6>
       <a href="">Sponsor </a>

@@ -22,7 +22,17 @@
     include '../src/card.php';
     include '../config/database_config.php';
 
-    $sql = "SELECT * FROM child";
+    $opt = $_GET['filter'] ?? 'all';
+
+    if ($opt == 'all') {
+
+        $sql = "SELECT * FROM child";
+    } elseif ($opt == 'support')
+        $sql = "SELECT * FROM child where status !='Fully Sponsored'";
+    elseif ($opt == 'sponsored')
+        $sql = "SELECT * FROM child where status ='Fully Sponsored'";
+
+
 
     $children = $conn->query($sql);
 
@@ -31,16 +41,16 @@
 
     ?>
     <section class="mkc">
-        <a href="" class="bx">All Children (6)</a>
-        <a href="">Need Support (3)</a>
-        <a href="">Sponsored (1)</a>
+        <a href="/orphan/pages/children.php#ctxc?filter=all" class="bx">All Children </a>
+        <a href="/orphan/pages/children.php#ctxc?filter=support">Need Support </a>
+        <a href="/orphan/pages/children.php#ctxc?filter=sponsored">Sponsored</a>
     </section>
 
-    <section class="ctxc">
-        <?php
-        while($child=$children->fetch_assoc()){
-            
-              Ocard($child['name'],$child['age'],$child['gender'],$photo=$child['filename'],"",$status=$child['status']);
+    <section class="ctxc" id="ctxc">
+    <?php
+        while ($child = $children->fetch_assoc()) {
+
+            Ocard($child['name'], $child['age'], $child['gender'], $photo = $child['filename'], "", $status = $child['status']);
         }
         // Ocard();
         // Ocard();
@@ -48,7 +58,7 @@
         // Ocard();
         // Ocard();
         // Ocard();
-        ?>
+    ?>
 
     </section>
 
