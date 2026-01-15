@@ -1,12 +1,20 @@
 <?php
+session_start();
 
-class User{
+function verified():bool{
 
-    function Authenticate(){}
+   if(isset($_SESSION['email'])){
+   
 
-    function Logout(){}
+    return true;
+   }
+   return false;
 
-    function Login(){}
+    // if($_SESSION['email']==null) return true;
+    // return false;
 }
 
+function redirect_if_not_auth(){
+    if(!verified()) header('location: /orphan/pages/login.php');
+}
 ?>

@@ -13,6 +13,7 @@
 </head>
 <body>
     <?php 
+    include 'src/Auth.php';
     include 'include/header.php' ;
     ?>
      <section class="hero">

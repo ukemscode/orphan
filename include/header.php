@@ -1,3 +1,9 @@
+<?php 
+
+
+
+?>
+
 <header>
       <section class="ht">
         <div>
@@ -9,8 +15,10 @@
           <li><a href="/orphan/pages/About.php">About</a></li>
           <li><a href="/orphan/pages/children.php">Our Children</a></li>
           <li><a href="/orphan/pages/donations.php">Donations</a></li>
-          <li><a href="/orphan/pages/dashboard.php">Dashboard</a></li>
-          <li><a href="/orphan/pages/login.php">Admin Login</a></li>
+          <?php echo verified()? "<li><a href=\"/orphan/pages/dashboard.php\">Dashboard</a></li>":" " ?>
+          <?php echo verified()? "<li><a href=\"/orphan/src/logout.php\">Logout</a></li>":"<li><a href=\"/orphan/pages/login.php\">Admin Login</a></li>" ?>
+          
+     
         </ul>
         
         <i class="bi bi-list"  onclick="change()" onresize="reset()"></i>

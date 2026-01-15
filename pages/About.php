@@ -13,7 +13,7 @@
 </head>
 <body>
     <?php
-
+    include '../src/Auth.php';
     include '../include/header.php';
     include '../src/card.php';
 

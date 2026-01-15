@@ -15,9 +15,12 @@
 <body>
   <?php
 
+include '../src/Auth.php';
   include '../include/header.php';
   include '../src/card.php';
   include '../config/database_config.php';
+
+  redirect_if_not_auth();
 
   $sql = "SELECT * FROM child";
   
@@ -99,7 +102,10 @@
     </div>
   </div>
 
-
+<div>
+  <a href="">Add admin</a>
+  <a href="">Delete Admin</a>
+</div>
   <section id="manage-children" class="manage-children">
     <div class="header">
       <h2>Manage Children</h2>
